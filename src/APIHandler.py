@@ -11,4 +11,3 @@ def get_response(query):
     response = requests.get(url).json()
     with open('data/recipes.json', 'w') as f:
         json.dump(response, f, indent=2)
-        print('Recipes loaded!')

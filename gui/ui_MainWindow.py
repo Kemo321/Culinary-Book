@@ -15,6 +15,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWebEngineWidgets import QWebEngineView
 from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QListWidget,
     QListWidgetItem, QMainWindow, QMenuBar, QPushButton,
     QSizePolicy, QSplitter, QStackedWidget, QStatusBar,
@@ -79,11 +80,11 @@ class Ui_MainWindow(object):
         self.page.setObjectName(u"page")
         self.gridLayout_2 = QGridLayout(self.page)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.textEdit_2 = QTextEdit(self.page)
-        self.textEdit_2.setObjectName(u"textEdit_2")
-        self.textEdit_2.setReadOnly(True)
+        self.webEngineView = QWebEngineView(self.page)
+        self.webEngineView.setObjectName(u"webEngineView")
+        self.webEngineView.setUrl(QUrl(u"about:blank"))
 
-        self.gridLayout_2.addWidget(self.textEdit_2, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.webEngineView, 0, 0, 1, 1)
 
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QWidget()
