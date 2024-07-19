@@ -15,16 +15,6 @@ class MainWindow(QMainWindow):
         self.ui.pushButton.clicked.connect(self._button_clicked)
         self.ui.listWidget.itemClicked.connect(self._recipe_clicked)
 
-        css = """
-        QWidget {
-            background-color: #f0f0f0;
-            color: #333;
-            border: 1px solid #000;
-            border-radius: 5px;
-        }
-        """
-        self.setStyleSheet(css)
-
     def _button_clicked(self):
         self.ui.listWidget.clear()
         self._load_recipes()
